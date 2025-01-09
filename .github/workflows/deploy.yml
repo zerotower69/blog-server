@@ -41,7 +41,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             # 确保 npm 和 pm2 在 PATH 中
-            export PATH=$PATH:/usr/local/bin
+            export PATH=/www/server/nodejs/v20.9.0/bin:$PATH
             cd /www/wwwroot/blog/server
             npm install
             npm install pm2 -g --registry=https://registry.npmmirror.com/
