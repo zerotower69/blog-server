@@ -20,7 +20,7 @@ jobs:
       
       - name: 下载依赖、打包项目
         run: |
-          npm install --registry=https://registry.npmmirror.com/         # 安装依赖
+          npm install      # 安装依赖
           npm run build
 
 
@@ -43,6 +43,6 @@ jobs:
             # 确保 npm 和 pm2 在 PATH 中
             export PATH=$PATH:/usr/local/bin
             cd /www/wwwroot/blog/server
-            npm install --production --registry=https://registry.npmmirror.com/ 
+            npm install --omit=dev
             npm run build
             pm2 restart
