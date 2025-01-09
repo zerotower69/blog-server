@@ -30,7 +30,7 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_NAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
-          source: './dist,package.json'
+          source: './dist,package.json,ecosystem.config.js'
           target: '/www/wwwroot/blog/server'
 
       - name: SSH to server and restart application
@@ -45,4 +45,4 @@ jobs:
             cd /www/wwwroot/blog/server
             npm install
             npm install pm2 -g --registry=https://registry.npmmirror.com/
-            npx pm2 restart
+            npx pm2 start
