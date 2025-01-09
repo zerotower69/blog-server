@@ -41,7 +41,8 @@ jobs:
           username: ${{ secrets.SERVER_NAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            echo '${{secrets.SERVER_NAME}'
+            servername=${{ secrets.SERVER_NAME }}
+            echo "server name is $servername"
             cd /www/wwwroot/blog/server
             npm install --production --registry=https://registry.npmmirror.com/ 
             npm run build
